@@ -2,8 +2,9 @@ import sigmoid
 import siggradient
 import costfunct
 
-pixeles=20
+pixeles=15
 canvas=600
+capaOculta=40
 
 matrix=[]
 for i in range (pixeles):
@@ -119,17 +120,17 @@ def epsilon_init(prevLay,nextLay):  ### el epsilon es usado para llenar las matr
 
 
 theta1=[]  #matriz de 25x401 inicializado con los valores de epsilon_init.
-epsilon=epsilon_init(401,25)
-for i in range (25):
+epsilon=epsilon_init(pixeles*pixeles+1,capaOculta)
+for i in range (capaOculta):
     theta1.append([])
-    for j in range (401):
+    for j in range (pixeles*pixeles+1):
         theta1[i].append(random(-epsilon,epsilon))
 
 theta2=[]  #matriz de 10x26 inicializado con los valores de epsilon_init.
-epsilon2=epsilon_init(26,10)
+epsilon2=epsilon_init(capaOculta+1,10)
 for i in range (10):
     theta2.append([])
-    for j in range (26):
+    for j in range (capaOculta+1):
         theta2[i].append(random(-epsilon2,epsilon2))
 
 b1=random(0,0.1)
@@ -239,14 +240,22 @@ def ejecutarForwardPropagation():
     
     print('Prediccion: ',0 if (A3.index(max(A3))+1)==10 else (A3.index(max(A3))+1))
     #printmatrix(A3)
-    dibujoCapa(800,70,A2)
-    dibujoCapa(1000,70,A3)
+    dibujoCapa(800,A2)
+    dibujoCapa(1000,A3)
 
            
-def dibujoCapa(xpos, ypos,capa):
-    for indice in range(len(capa)):
-        fill(map(capa[indice][0],0,1,0,255))
-        square(xpos,ypos+indice*15,15)
+def dibujoCapa(xpos, capa):
+    ladoCuadrado=20
+    print(len(capa)*ladoCuadrado)
+    if len(capa)*ladoCuadrado < (height-100):
+        for indice in range(len(capa)):
+            fill(map(capa[indice][0],0,1,0,255))
+            square(xpos,50+indice*ladoCuadrado,ladoCuadrado)
+    else:
+        for indice in range(len(capa)):
+            fill(map(capa[indice][0],0,1,0,255))
+            square(xpos,50+indice*(height-100)/len(capa),ladoCuadrado)
+    
         
 def ejecutarBackpropagation(Y):
     global theta1, theta2, backpropagationInProgress
