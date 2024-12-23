@@ -280,7 +280,7 @@ def ejecutarBackpropagation(Y):
     
     
     print("Costo:",costfunct.costfunct(Y,A3,0,theta1,theta2))
-    print('Prediccion: ',0 if (A3.index(max(A3))+1)==10 else (A3.index(max(A3))+1))
+    #print('Prediccion: ',0 if (A3.index(max(A3))+1)==10 else (A3.index(max(A3))+1))
     #printmatrix(A3)
 
     #Backwards propagation:
