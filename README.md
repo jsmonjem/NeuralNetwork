@@ -7,8 +7,8 @@ operations are taking place for matrix multiplications and other operations.
 This sketch is meant to be run on Processing(https://processing.org/). 
 
 How to use:
-- Right clic to draw on the canvas.
-- Left clic to erase your drawing. 
+- Left clic to draw on the canvas.
+- Right clic to erase your drawing. 
 - Middle clic runs forward propagation.
 - Typing the numbers 0-9 will train the NN on the number drawn on the canvas.
 
