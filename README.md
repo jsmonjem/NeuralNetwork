@@ -1,10 +1,10 @@
 # NeuralNetwork
 This project displays some of the intuition I got on Neural Networks after a machine learning course. 
 
-This one is about numbers detection on a 20x20 grid.
+This one is about numbers detection on a grid.
 I was unable to use libraries like numpy to take advantage of matrix operations, so basic and slow 
 operations are taking place for matrix multiplications and other operations.
-This sketch is meant to be run on Processing (https://processing.org/). 
+This sketch is meant to be run on Processing(https://processing.org/). 
 
 How to use:
 - Right clic to draw on the canvas.
@@ -19,9 +19,9 @@ The information stored in theta1 and theta2 will be erased after stopping the pr
 There is currently no way to store these values. 
 
 ## Neural network details:
-  This NN takes a 20x20 grid as input: 400 inputs.
+  This NN takes a 20x20 grid as input: 400 inputs. (It can be changed with the pixels variable)
 
-  it has only one hidden layer with 25-neurons.  
+  it has only one hidden layer with 25-neurons.  (It can be changed with the capaOculta variable)
   
   and also a 10 neurons output layer.  
 
