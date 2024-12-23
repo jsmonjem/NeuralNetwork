@@ -12,18 +12,18 @@ How to use:
 - Middle clic runs forward propagation.
 - Typing the numbers 0-9 will train the NN on the number drawn on the canvas.
 
-The neural network is initially working following a stochastic aproach, you need to train the neural network
+## Neural network details:
+
+The neural network is currently working following a stochastic aproach, you need to train the neural network
 one number (one training example) at a time. 
 
 The information stored in theta1 and theta2 will be erased after stopping the program. 
 There is currently no way to store these values. 
 
-## Neural network details:
   This NN takes a 20x20 grid as input: 400 inputs. (It can be changed with the pixels variable)
 
-  it has only one hidden layer with 25-neurons.  (It can be changed with the capaOculta variable)
+  It has one hidden layer with 25-neurons.  (It can be changed with the capaOculta variable)
   
-  and also a 10 neurons output layer.  
+  Finally, the NN has a 10 neurons output layer.  
 
-it uses a sigmoid activation function. 
-its cost function includes a regularization term. (theta^2)
+It uses a sigmoid activation function and a constant learing rate.
