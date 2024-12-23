@@ -246,7 +246,6 @@ def ejecutarForwardPropagation():
            
 def dibujoCapa(xpos, capa):
     ladoCuadrado=20
-    print(len(capa)*ladoCuadrado)
     if len(capa)*ladoCuadrado < (height-100):
         for indice in range(len(capa)):
             fill(map(capa[indice][0],0,1,0,255))
