@@ -238,20 +238,30 @@ def ejecutarForwardPropagation():
     A2=sigmoid.sigmoid(A2)            #obtengo la hidden layer real (con bias).
     A3=sigmoid.sigmoid(matrixMultp(theta2,A2))  #obtengo la output layer. (la pongo en mayuscula, esta no necesita bias.)       
     
-    print('Prediccion: ',0 if (A3.index(max(A3))+1)==10 else (A3.index(max(A3))+1))
+    #print('Prediccion: ',0 if (A3.index(max(A3))+1)==10 else (A3.index(max(A3))+1))
     #printmatrix(A3)
     dibujoCapa(800,A2)
     dibujoCapa(1000,A3)
+    fill(200, 200, 200)
+    stroke(200, 200, 200)
+    square(945, 315,20)
+    fill(20, 20, 20)
+    textSize(20)
+    text("Prediccion:", 950, 300)
+    text(0 if (A3.index(max(A3))+1)==10 else (A3.index(max(A3))+1), 950, 330)
+    
 
            
 def dibujoCapa(xpos, capa):
     ladoCuadrado=20
     if len(capa)*ladoCuadrado < (height-100):
         for indice in range(len(capa)):
+            stroke(10, 10, 10)
             fill(map(capa[indice][0],0,1,0,255))
             square(xpos,50+indice*ladoCuadrado,ladoCuadrado)
     else:
         for indice in range(len(capa)):
+            stroke(10, 10, 10)
             fill(map(capa[indice][0],0,1,0,255))
             square(xpos,50+indice*(height-100)/len(capa),ladoCuadrado)
     
